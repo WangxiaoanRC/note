@@ -1,0 +1,13 @@
+= Head-First-Design-Patterns
+Doc Writer <466003967@qq.com>
+v1.0 2018-07-19
+:Doc:
+:homepage: https://github.com/wangxiaoan1234/notes
+
+== 策略模式
+
+== 观察者模式
+
+== 装饰器模式
+
+== 工场模式
