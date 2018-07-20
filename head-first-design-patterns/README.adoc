@@ -1,13 +1,29 @@
 = Head-First-Design-Patterns
 Doc Writer <466003967@qq.com>
-v1.0 2018-07-19
-:Doc:
+v1.0, 2018-07-19
+:toc:
 :homepage: https://github.com/wangxiaoan1234/notes
 
 == 策略模式
+鸭子
 
 == 观察者模式
+气象站
 
 == 装饰器模式
+星巴滋咖啡
 
 == 工场模式
+披萨
+
+== 单例模式
+牛奶巧克力加工厂
+
+== 命令模式
+遥控器
+
+== 适配器模式
+鸭子火鸡
+
+== 外观模式
+家庭影院
