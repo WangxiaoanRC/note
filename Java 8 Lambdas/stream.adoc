@@ -1,0 +1,61 @@
+= 流
+
+* 像 `filter` 这种只描述Stream，最终不产生新集合的方法叫作**惰性求值方法**。
+* 像 `count` 这样最终会从Stream产生值的方法叫作**及早求值方法**。
+
+== collect(toList())
+
+```Java
+List<String> collected = Stream.of("a", "b", "c")
+        .collect(Collectors.toList());
+
+Assert.assertEquals(Arrays.asList("a", "b", "c"), collected);
+```
+
+== map
+
+```Java
+List<String> collected = Stream.of("a", "b", "hello")
+        .map(String::toUpperCase)
+        .collect(Collectors.toList());
+
+Assert.assertEquals(Arrays.asList("A", "B", "HELLO"), collected);
+```
+== filter
+
+```Java
+List<String> collected = Stream.of("a", "b", "hello", "ac")
+        .filter(s -> s.startsWith("a"))
+        .collect(Collectors.toList());
+
+Assert.assertEquals(Arrays.asList("a", "ac"), collected);
+```
+
+== flatMap
+
+```Java
+List<Integer> together = Stream.of(Arrays.asList(1, 2), Arrays.asList(3, 4))
+       .flatMap(Collection::stream)
+       .collect(Collectors.toList());
+
+Assert.assertEquals(Arrays.asList(1, 2, 3, 4), together);
+```
+== max 和 min
+```Java
+List<Track> tracks = Arrays.asList(new Track("Bakai"),
+        new Track("Violets for Your Furs"),
+        new Track("Time Was"));
+Track shortestTrack = tracks.stream()
+        .min(Comparator.comparing(Track::getName))
+        .get();
+
+Assert.assertEquals(tracks.get(0), shortestTrack);
+```
+= reduce
+
+```Java
+int count = Stream.of(1, 2, 3)
+        .reduce(0, (acc, element) -> acc + element);
+
+Assert.assertEquals(6, count);
+```

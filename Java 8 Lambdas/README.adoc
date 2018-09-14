@@ -1,0 +1,7 @@
+= Java 8 Lamdbas
+Doc Writer <466003967@qq.com>
+v1.0, 2018-07-19
+:toc:
+:homepage: https://github.com/wangxiaoan1234/note
+
+include::stream.adoc[]
